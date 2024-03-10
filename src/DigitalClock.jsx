@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 export default function DigitalClock() {
   const [time, setTime] = useState(new Date());
-  const [format, setFormat] = useState("Military format");
+
   useEffect(() => {
     const id = setInterval(() => {
       setTime(new Date());
@@ -59,8 +59,10 @@ export default function DigitalClock() {
   }
   return (
     <>
-      <div className="clock">{formatTime()}</div>
-      <div className="date">
+      <div className=" mt-[39vh] text-clkClr  text-[18vw]  sm:text-[8vw]">
+        {formatTime()}
+      </div>
+      <div className="text-[9vw] text-dateColor sm:text-[4vw]">
         {formatDate()} &nbsp;&nbsp;&nbsp;&nbsp;{formatDay()}
       </div>
     </>
